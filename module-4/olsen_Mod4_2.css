@@ -1,0 +1,38 @@
+h1,h3{
+	text-align: center;
+	color: rgb(47,79,79);
+}
+
+figure{
+	text-align: center;
+}
+
+figcaption{
+	font-style: italic;
+	font-size: .75em;
+	color: rgb(47,79,79);
+}
+
+#image-gallery {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 10%;
+  padding: 15px;
+}
+
+.side-by-side{
+	border: 1px solid #2F4F4F;
+}
+
+#siteNav{
+	float: right;
+	margin-bottom: 20px;
+}
+
+a:hover{
+	background-color: #D6A800;
+}
+
+a:visited{
+	color: #DC143C;
+}
