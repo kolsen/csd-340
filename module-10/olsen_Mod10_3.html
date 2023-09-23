@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSD 340 Web Development with HTML and CSS</title>
+	<meta name="author" content="Keith Olsen" /> 
+	<meta name="robots" content="nofollow" /> 
+	<link href="olsen_Mod10_3.css" type="text/css" rel="stylesheet" />
+	<script>
+		function changeImage(newSrc) {
+			var cloudsImage = document.getElementById('clouds');
+			cloudsImage.src = newSrc;
+		}
+	</script>
+</head>
+
+<body>
+    <h1>Assignment 10.3: JavaScript - Part 2</h1>
+	<br />
+    <div>
+		<a href="#" id="imageLink">
+			<img border="0" id="clouds" src="images/clouds_01.jpg" onmouseover="changeImage('images/clouds_02.jpg');" onmouseout="changeImage('images/clouds_01.jpg');">
+		</a>
+	</div>
+    <br />
+    <div onmouseover="this.style.color='red';" onmouseout= "this.style.color='black';">
+      Run your mouse over the image to change.
+    </div>
+	<br />
+	<div id= "gardenOfGods">
+		<img src="images\garden_of_the_gods.jpg" alt="Garden of the Gods, Rock Face">
+	</div>
+	
+	
+    <br />
+    <div onmouseover="this.style.color='red';" onmouseout= "this.style.color='black';">
+      Click the image to change.
+    </div>
+	
+	<!-- The modal container -->
+    <div id="modal" class="modal">
+        <span class="close" id="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', function() { //This ensures the page has completely loaded.
+			// Pop out the garden of the gods photo
+			const gardenOfGodsDiv = document.getElementById('gardenOfGods');
+			const modal = document.getElementById('modal');
+			const modalImage = document.getElementById('modalImage');
+			const closeModal = document.getElementById('close');
+
+			// Open the modal when the image is clicked
+			gardenOfGodsDiv.addEventListener('click', () => {
+				modal.style.display = 'block';
+				modalImage.src = gardenOfGodsDiv.querySelector('img').src;
+			});
+
+			// Close the modal when the close button or anywhere outside the image is clicked
+			closeModal.addEventListener('click', () => {
+				modal.style.display = 'none';
+			});
+
+			window.addEventListener('click', (event) => {
+				if (event.target == modal) {
+					modal.style.display = 'none';
+				}
+			});
+		 });
+	</script>
+</body>
+</html>
