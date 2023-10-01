@@ -10,6 +10,65 @@
 </head>
 
 <body>
-    <h1>Assignment 11.2: JavaScript - Part 2</h1>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+	
+	<div class="container">
+        <h3>To do List</h3>
+		<p>Please add items to this to do list below. To view the list click the display button.</p>
+		
+        <input type="text" id="textInput" placeholder="Enter text">
+        <button onclick="addEntry()">Add</button>
+        <button onclick="deleteLastEntry()">Delete Last Entry</button>
+        <button onclick="displayArray()">Display</button>
+        <div id="output"></div>
+    </div>
+	
+	<script>
+        // Initialize an empty array to store entries
+        const entries = [];
+
+        function addEntry() {
+            const textInput = document.getElementById('textInput');
+            const entry = textInput.value.trim();
+
+            if (entry !== '') {
+                entries.push(entry);
+                alert(`Added: ${entry}`);
+                textInput.value = '';
+            }
+        }
+
+        function deleteLastEntry() {
+            if (entries.length > 0) {
+                const deletedEntry = entries.pop();
+                alert(`Deleted: ${deletedEntry}`);
+            } else {
+                alert('The array is empty.');
+            }
+        }
+
+        function displayArray() {
+            const output = document.getElementById('output');
+            output.innerHTML = '';
+
+            if (entries.length === 0) {
+                output.textContent = 'The array is empty.';
+            } else {
+                entries.forEach((entry, index) => {
+                    const listItem = document.createElement('p');
+                    listItem.textContent = `${index + 1}. ${entry}`;
+                    output.appendChild(listItem);
+                });
+            }
+        }
+		
+		// Listen for enter key on textInput
+		const textInput = document.getElementById('textInput');
+		textInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            addEntry();
+        }
+    });
+    </script>
 </body>
 </html>
