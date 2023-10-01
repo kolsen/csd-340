@@ -1,3 +1,6 @@
+<!-- Created By: Keith Olsen -->
+<!-- Created On: 10/01/2023 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +59,7 @@
             } else {
                 entries.forEach((entry, index) => {
                     const listItem = document.createElement('p');
-                    listItem.textContent = `${index + 1}. ${entry}`;
+                    listItem.textContent = `Item ${index + 1}:  ${entry}`;
                     output.appendChild(listItem);
                 });
             }
