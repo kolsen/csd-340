@@ -1,0 +1,83 @@
+<!-- Created By: Keith Olsen -->
+<!-- Created On: 10/07/2023 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <meta name="author" content="Keith Olsen" />
+    <meta name="robots" content="nofollow" />
+    <link href="olsen_Mod12_2.css" type="text/css" rel="stylesheet" />
+    <script>
+        // JavaScript to sort and display the list items
+
+        // Display the list items in ascending order
+        function displayAscending() {
+            const olElement = document.querySelector("ol");
+            const listItems = Array.from(olElement.getElementsByTagName("li"));
+
+            listItems.sort(function (a, b) {
+                return a.textContent.localeCompare(b.textContent);
+            });
+
+            listItems.forEach(function (item) {
+                olElement.appendChild(item);
+            });
+        }
+
+        // Display the list items in descending order
+        function displayDescending() {
+            const olElement = document.querySelector("ol");
+            const listItems = Array.from(olElement.getElementsByTagName("li"));
+
+            listItems.sort(function (a, b) {
+                return b.textContent.localeCompare(a.textContent);
+            });
+
+            listItems.forEach(function (item) {
+                olElement.appendChild(item);
+            });
+        }
+    </script>
+</head>
+
+<body>
+<div id="container">
+    <h1>Assignment 12.2: JavaScript - Part 4</h1>
+    <div id="leftDiv">
+        <h3>Top 10 Favorite Books</h3>
+        <ol>
+            <li>The Hobbit by J.R.R. Tolkien</li>
+            <li>Lord of the Rings by J.R.R. Tolkien</li>
+            <li>Beren and Lúthien by J.R.R. Tolkien</li>
+            <li>The Fall of Gondolin by J.R.R. Tolkien</li>
+            <li>The Children of Húrin by J.R.R. Tolkien</li>
+            <li>The Silmarillion by J.R.R Tolkien</li>
+            <li>The Legend of Sigurd and Gudrún by J.R.R. Tolkien</li>
+            <li>Dresden Files Series by Jim Butcher</li>
+            <li>The Chronicles of Narnia by C.S. Lewis</li>
+            <li>Dune by Frank Herbert</li>
+        </ol>
+        <button onclick="displayAscending()">Top to Bottom</button>
+        <button onclick="displayDescending()">Bottom to Top</button>
+    </div>
+
+    <div id="rightDiv">
+        <h3>5 Things I’ve Learned Since the Course Started</h3>
+        <ul>
+            <li>How to use GitHub Pages and display my site there while I am working on it</li>
+            <li>How to use modern HTML and CSS techniques</li>
+            <li>Design best practices</li>
+            <li>Different ways people use webpages</li>
+            <li>Reminder of how to create webpages from scratch using HTML</li>
+        </ul>
+    </div>
+
+    <div id="siteNav">
+        <a href="../index.html">back to Landing Page</a>
+    </div>
+</div>
+</body>
+</html>

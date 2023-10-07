@@ -1,0 +1,58 @@
+h1{
+	text-align: center;
+}
+h3{
+	font-weight: 500;
+}
+
+li{
+	font-weight: 300;
+}
+
+
+ol{
+	padding: 10px;
+	list-style-position: inside;
+}
+
+ul{
+	padding: 10px;
+	list-style-type: upper-roman;
+	list-style-position: inside;
+}
+
+#container{
+	width: 100%;
+}
+
+#leftDiv{
+	float: left;
+	width: 45%;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid red;
+	border-radius: 15px;
+}
+
+#rightDiv {
+	float: right; 
+	margin: 10px;
+	width: 45%;
+	padding: 10px;
+	border: 1px dashed red;
+	border-radius: 15px;
+}
+
+#siteNav{
+	float: right;
+	margin-top: 25%;
+	margin-bottom: 20px;
+}
+
+a:hover{
+	background-color: #D6A800;
+}
+
+a:visited{
+	color: #DC143C;
+}
